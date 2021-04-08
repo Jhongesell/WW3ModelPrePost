@@ -1,0 +1,16 @@
+#--------------------------------------------------------------------------------
+# -*- coding:utf-8 -*-'
+# Project       : Pisco Project WW3
+# @Author       : Carlos Enciso Ojeda
+# @Email        : carlos.enciso.o@gmail.com
+# @Created Date : Tuesday, April 03th 2021, 12:22:40 am
+# @Copyright (c): 2021 Peruvian Geophysical Institute
+# @License      : MIT'
+#------------#
+# Parameters:
+#------------#
+# .swh.   = significant height of combined wind waves and swell (m)
+# .perpw. = primary wave mean period (s)
+# .dirpw. = primary wave direction
+# (degrees true, i.e. 0 deg => coming from North; 90 deg => coming from East)
+#--------------------------------------------------------------------------------
