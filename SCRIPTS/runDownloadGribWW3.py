@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 9:14:57 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 3:21:40 am
+# @Last Modified: Thursday, April 8th 2021 3:43:51 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -45,10 +45,6 @@ if int(input('Quiere descargar datos del periodo post-hindcast 2011-2021? (Si: 1
     ilon=int(input('Ingrese Longitud (WGS84 coords): '))
     iDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-01 format): ')
     eDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-dd format): ')
-    #ilat=-14
-    #ilon=-77
-    #iDate='2021-01-01'
-    #eDate='2021-02-01'
     downloadASCII(iDate=iDate,eDate=eDate,diri_ascii=diri_ascii,ascii_name=ascii_name,
                   downloads=True,lat=ilat,lon=ilon)
 # Enjoy it!
