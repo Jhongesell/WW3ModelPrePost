@@ -82,7 +82,7 @@ class WW3downloaderascii:
     self.iDate = iDate; self.eDate=eDate
     nidays=datetime.strptime(iDate,'%Y-%m-%d')-datetime(2010,11,7)
     nedays=datetime.strptime(eDate,'%Y-%m-%d')-datetime(2010,11,7)
-    ih=nidays.days*24+21; eh=nedays.days*24+21
+    ih=nidays.days*24+21; eh=nedays.days*24+42
     ilat=np.arange(-77.5,77.5,.5).tolist().index(lat)
     ilon=np.arange(0,359.5,.5).tolist().index(lon+180)
     url=[f'WaveWatch_III_Global_Wave_Model_best.ncd.ascii?lon%5B{ilon}%5D,',
