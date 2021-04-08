@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Thursday, April 8th 2021, 1:03:21 am
 # -----
-# @Last Modified: Thursday, April 8th 2021 3:00:31 am
+# @Last Modified: Thursday, April 8th 2021 3:35:03 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -28,7 +28,7 @@ import os
 outdiri='../OUTPUT/'
 os.makedirs(outdiri, exist_ok=True)
 printing('Obteniendo Parametros')
-if input('Desea ponerle un nombre particular al archivo csv final? (Si: 1 | No: 0): '):
+if int(input('Desea ponerle un nombre particular al archivo csv final? (Si: 1 | No: 0): ')):
     nameit=input('Cual sera el nombre?: ')
     nameit=f'WW3_Allmerged_dataset_{nameit}.csv'
 else:

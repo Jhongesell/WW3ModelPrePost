@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 10:59:50 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 2:57:16 am
+# @Last Modified: Thursday, April 8th 2021 3:31:01 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -45,13 +45,10 @@ postww3 = postWW3grb2(lat=ilat,lon=ilon,dirigrib=dirigrib,path_subset=path_subse
 # Take into account your period process 
 #-------------------------------------#
 printing('Obteniendo Parametros')
-Subsetgrib2=input('Quiere realizar el subset (dependiendo de la cantidad puede tomar tiempo)? (Si: 1 | No: 0): ')
-if Subsetgrib2:
-    until2009=input('Quiere realizar el subset de archivos comprendidos entre 1979-2009? (Si: 1 | No: 0): ')
-    post2009=input('Quiere realizar el subset de archivos del 2010? (Si: 1 | No: 0): ')
-    if until2009:
+if int(input('Quiere realizar el subset (dependiendo de la cantidad puede tomar tiempo)? (Si: 1 | No: 0): ')):
+    if int(input('Quiere realizar el subset de archivos comprendidos entre 1979-2009? (Si: 1 | No: 0): ')):
         postww3.subsetgrib(htype='multi_reanal')
-    if post2009:
+    if int(input('Quiere realizar el subset de archivos del 2010? (Si: 1 | No: 0): ')):
         postww3.subsetgrib(htype='multi_1')
 #-------------------------------------#
 # Save it as csv

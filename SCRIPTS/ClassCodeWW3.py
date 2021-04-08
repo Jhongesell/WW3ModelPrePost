@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 9:06:37 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 1:14:23 am
+# @Last Modified: Thursday, April 8th 2021 3:29:06 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -147,6 +147,7 @@ class postWW3grb2:
                                                                       longitude=self.lon, 
                                                                       method='nearest', drop=True) \
               for x in v if k in x] for k,v in self.dicfili.items()}
+    printing('Subseting to NetCDF!')
     for k in self.vars:
         for n,(i,l) in enumerate(zip(self.dicfili[k],dsdict[k])):
           pathi = self.path_subset+i.split('/')[-1][:-4]+'nc'
