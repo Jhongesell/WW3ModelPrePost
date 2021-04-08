@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 10:59:50 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 1:24:58 am
+# @Last Modified: Thursday, April 8th 2021 2:57:16 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -37,20 +37,21 @@ outdiri='../OUTPUT/'
 os.makedirs(dirigrib, exist_ok=True)
 os.makedirs(path_subset, exist_ok=True)
 os.makedirs(outdiri, exist_ok=True)
-ilat=-14
-ilon=-77
+ilat=int(input('Ingrese Latitud (WGS84 coords): '))
+ilon=int(input('Ingrese Longitud (WGS84 coords): '))
 nameit=outdiri+f'WW3_posthindcast_{ilat}S_{ilon}N.csv'
-Subsetgrib2=False
-until2005=True
-post2005=True
 postww3 = postWW3grb2(lat=ilat,lon=ilon,dirigrib=dirigrib,path_subset=path_subset)
 #-------------------------------------#
 # Take into account your period process 
 #-------------------------------------#
+printing('Obteniendo Parametros')
+Subsetgrib2=input('Quiere realizar el subset (dependiendo de la cantidad puede tomar tiempo)? (Si: 1 | No: 0): ')
 if Subsetgrib2:
-    if until2005:
+    until2009=input('Quiere realizar el subset de archivos comprendidos entre 1979-2009? (Si: 1 | No: 0): ')
+    post2009=input('Quiere realizar el subset de archivos del 2010? (Si: 1 | No: 0): ')
+    if until2009:
         postww3.subsetgrib(htype='multi_reanal')
-    if post2005:
+    if post2009:
         postww3.subsetgrib(htype='multi_1')
 #-------------------------------------#
 # Save it as csv

@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 9:14:57 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 1:24:40 am
+# @Last Modified: Thursday, April 8th 2021 2:50:06 am
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -26,21 +26,30 @@ import os
 # Main code 
 #-------------------------------------#
 #---- Important Inquiry ----#
-downloadgrib, downloadascii = True,False
+printing('Obteniendo Parametros')
+hindcast=input('Quiere descargar datos del periodo hindcast 1979-2010? (Si: 1 | No: 0): ')
 #---- Taking options ----#
-if downloadgrib:
+if hindcast:
     dirigrib='../DATASET/GRIB2/'
     os.makedirs(dirigrib, exist_ok=True)
-    DownloadWW3('2004-01','2004-03',dirigrib=dirigrib) 
-if downloadascii:
+    iDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm format): ')
+    eDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm format): ')
+    DownloadWW3(iDate,eDate,dirigrib=dirigrib) 
+posthindcast=input('Quiere descargar datos del periodo post-hindcast 2011-2021? (Si: 1 | No: 0): ')
+if posthindcast:
     #---- Using my class ----#
+    printing('Obteniendo Parametros')
     diri_ascii='../OUTPUT/'
     os.makedirs(diri_ascii, exist_ok=True)
     ascii_name='WW3ascii'
-    ilat=-14
-    ilon=-77
-    iDate='2021-01-01'
-    eDate='2021-02-01'
+    ilat=int(input('Ingrese Latitud (WGS84 coords): '))
+    ilon=int(input('Ingrese Longitud (WGS84 coords): '))
+    iDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-dd format): ')
+    eDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-dd format): ')
+    #ilat=-14
+    #ilon=-77
+    #iDate='2021-01-01'
+    #eDate='2021-02-01'
     downloadASCII(iDate=iDate,eDate=eDate,diri_ascii=diri_ascii,ascii_name=ascii_name,
                   downloads=True,lat=ilat,lon=ilon)
 # Enjoy it!
