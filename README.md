@@ -30,3 +30,9 @@ When the download is finished, you will find yourself inside the folder that con
 ```bash
 conda env create -f environment.yml
 ```
+
+Sometimes you must install libeccodes-tools
+
+```bash
+sudo apt install libeccodes-tools (debian/ubuntu distribution)
+```
