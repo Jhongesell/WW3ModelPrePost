@@ -32,7 +32,7 @@ if int(input('Quiere descargar datos del periodo hindcast 1979-2010? (Si: 1 | No
     dirigrib='../DATASET/GRIB2/'
     os.makedirs(dirigrib, exist_ok=True)
     iDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm format): ')
-    eDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm format): ')
+    eDate=input('Ingrese Fecha Final de Descarga (YYYY-mm format): ')
     DownloadWW3(iDate,eDate,dirigrib=dirigrib)
 printing('Obteniendo Parametros') 
 if int(input('Quiere descargar datos del periodo post-hindcast 2011-2021? (Si: 1 | No: 0): ')):
@@ -44,7 +44,7 @@ if int(input('Quiere descargar datos del periodo post-hindcast 2011-2021? (Si: 1
     ilat=int(input('Ingrese Latitud (WGS84 coords): '))
     ilon=int(input('Ingrese Longitud (WGS84 coords): '))
     iDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-01 format): ')
-    eDate=input('Ingrese Fecha Inicial de Descarga (YYYY-mm-dd format): ')
+    eDate=input('Ingrese Fecha Final de Descarga (YYYY-mm-01 format): ')
     downloadASCII(iDate=iDate,eDate=eDate,diri_ascii=diri_ascii,ascii_name=ascii_name,
                   downloads=True,lat=ilat,lon=ilon)
 # Enjoy it!
