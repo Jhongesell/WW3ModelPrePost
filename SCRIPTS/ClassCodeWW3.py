@@ -135,7 +135,6 @@ class postWW3grb2:
   #---- Preprocesing vars & time----#
   def replacedtime(self,ds):
     ds = ds.drop(['time'])
-    ds = ds.compute()
     ds['step'] = ds['valid_time']
     ds = ds.sel(step=~ds.get_index("step").duplicated())
     ds = ds.drop(['valid_time','surface'])
