@@ -103,7 +103,7 @@ class WW3downloaderascii:
     try:
       os.system(f'wget -c -P {self.diriout} {self.main_url}')
     except:
-      print('Something went wrong. Check it!')
+      print('Something went wrong. Check it!!')
       #---- Rename it ----#
     fili=[os.path.join(self.diriout,x) for x in os.listdir(self.diriout) \
           if self.url[:4] in x]
