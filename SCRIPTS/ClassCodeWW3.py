@@ -127,7 +127,7 @@ class postWW3grb2:
                dirigrib=None,path_subset=None,):
     self.dirigrib=dirigrib
     self.path_subset=path_subset
-    self.lat=lat; self.lon=lon 
+    self.lat=lat; self.lon=lon+180
   #---- Preprocesing vars & time----#
   def replacedtime(self,ds):
     ds = ds.drop(['time'])
@@ -176,8 +176,8 @@ def downloadASCII(iDate=None,eDate=None,diri_ascii=None,ascii_name=None,
   nameit = f'{diri_ascii}{ascii_name}_lat_{lat}_lon_{lon}_{iDate}_to_{eDate}.csv'
   #---- For downloading  ----#
   if nmnths<=2:
-    ww3 = WW3downloaderascii(iDate=iDate,eDate=eDate,lat=-14,
-                             lon=-77,diriout=diri_ascii,nameout=ascii_name)
+    ww3 = WW3downloaderascii(iDate=iDate,eDate=eDate,lat=lat,
+                             lon=lon,diriout=diri_ascii,nameout=ascii_name)
     if downloads==True:
       ww3.downloadww3
     ww3.ascii2csv()
