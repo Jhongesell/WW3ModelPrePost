@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Thursday, April 8th 2021, 1:03:21 am
 # -----
-# @Last Modified: Thursday, April 8th 2021 3:35:03 am
+# @Last Modified: Wednesday, April 14th 2021 4:42:46 pm
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -25,18 +25,11 @@ import os
 #-------------------------------------#
 # Main code 
 #-------------------------------------#
+#---- Merging all CSV ----#
 outdiri='../OUTPUT/'
-os.makedirs(outdiri, exist_ok=True)
-printing('Obteniendo Parametros')
-if int(input('Desea ponerle un nombre particular al archivo csv final? (Si: 1 | No: 0): ')):
-    nameit=input('Cual sera el nombre?: ')
-    nameit=f'WW3_Allmerged_dataset_{nameit}.csv'
-else:
-    nameit='WW3_Allmerged_dataset.csv'
+nameit='WW3_Allmerged_dataset.csv'
 merging_all(outdiri=outdiri,nameit=nameit)
 #---- Writting my header ----#
-mysign='../HEADER/mysign'
-fili=outdiri+nameit
-myheader(fili=fili,mysign=mysign)
+myheader(outdiri=outdiri,nameit=nameit)
 # Enjoy it!
 printing('All processess has finish successfully!')

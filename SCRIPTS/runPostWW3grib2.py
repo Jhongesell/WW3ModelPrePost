@@ -7,7 +7,7 @@
 # @Email: carlos.enciso.o@gmail.com
 # @Created Date: Wednesday, April 7th 2021, 10:59:50 pm
 # -----
-# @Last Modified: Thursday, April 8th 2021 3:31:01 am
+# @Last Modified: Wednesday, April 14th 2021 4:38:30 pm
 # Modified By: Carlos Enciso Ojeda at <carlos.enciso.o@gmail.com>
 # -----
 # Copyright (c) 2021 EyM GeoInsight Company
@@ -31,29 +31,14 @@ import os
     path_subset: Directory where you want to save the subset processing files
     outdiri: Directory where you want to save the final processed file (csv format)
 """
-dirigrib='../DATASET/GRIB2/'
-path_subset='../DATASET/SUBSET/'
-outdiri='../OUTPUT/'
-os.makedirs(dirigrib, exist_ok=True)
-os.makedirs(path_subset, exist_ok=True)
-os.makedirs(outdiri, exist_ok=True)
+dirigrib='../DATASETS/GRIB2/'
+path_subset='../DATASETS/netCDF/'
 ilat=int(input('Ingrese Latitud (WGS84 coords): '))
 ilon=int(input('Ingrese Longitud (WGS84 coords): '))
-nameit=outdiri+f'WW3_posthindcast_{ilat}S_{ilon}N.csv'
-postww3 = postWW3grb2(lat=ilat,lon=ilon,dirigrib=dirigrib,path_subset=path_subset)
-#-------------------------------------#
-# Take into account your period process 
-#-------------------------------------#
-printing('Obteniendo Parametros')
-if int(input('Quiere realizar el subset (dependiendo de la cantidad puede tomar tiempo)? (Si: 1 | No: 0): ')):
-    if int(input('Quiere realizar el subset de archivos comprendidos entre 1979-2009? (Si: 1 | No: 0): ')):
-        postww3.subsetgrib(htype='multi_reanal')
-    if int(input('Quiere realizar el subset de archivos del 2010? (Si: 1 | No: 0): ')):
-        postww3.subsetgrib(htype='multi_1')
-#-------------------------------------#
-# Save it as csv
-#-------------------------------------#
-postww3.grb2tocsv(nameitcsv=nameit)
+nameit=f'Dataset_postGrib2_lat_{ilat}_lon_{ilon}.csv'
+postww3 = postWW3grb2(lat=ilat,lon=ilon,poshindsubsets=True,
+                      dirigrib=dirigrib,path_subset=path_subset)
+postww3.poshindcastgrb2(nameitcsv=nameit)
 # Enjoy it!
 printing('All processess has finish successfully!')
 
